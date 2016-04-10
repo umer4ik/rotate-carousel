@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.rotate-carousel {
+  position: relative;
+  height: 300px;
+  /*overflow: hidden;*/
+}
+.rotate-carousel-wrapper {
+  position: absolute;
+  background: rgba(0,0,255,.1);
+  /*min-height: 100px;*/
+  /*overflow: hidden;*/
+  /*width: 5px;
+  height: 5px;*/
+  background: #000;
+  border-radius: 50%;
+  transform: translateX(-50%);
+}
+.rotate-carousel-nav {
+  transform: translate(-50%, -50%);
+}
+.rotate-carousel-nav {
+  position: absolute;
+  background: #ccc;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  text-align: center;
+
+}
+.rotate-carousel-content {
+  display: none;
+  position: absolute;
+  width: 200px;
+  height: 100px;
+  background: #ccc;
+  top: -150px;
+  left: 0;
+  transform: translateX(-50%);
+}
+.rotate-carousel-content.active {
+  display: block;
+}
+.rotate-carousel-arrow {
+  position: absolute;
+  top: 160px;
+}
+.rotate-carousel-arrow-next {
+  right: 660px;
+}
+.rotate-carousel-arrow-prev {
+  left: 660px;
+}

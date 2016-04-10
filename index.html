@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>rotate carousel</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+  <script src="model.js"></script>
+  <script src="rotate-carousel.js"></script>
+</head>
+
+<body>
+  <div class="carousel">
+    <div class="item">
+      <div class="nav">item-0</div>
+      <div class="content">content-1</div>
+    </div>
+    <div class="item">
+      <div class="nav">item-1</div>
+      <div class="content">content-2</div>
+    </div>
+    <div class="item">
+      <div class="nav">item-2</div>
+      <div class="content">content-3</div>
+    </div>
+    <div class="item">
+      <div class="nav">item-3</div>
+      <div class="content">content-4</div>
+    </div>
+    <div class="item">
+      <div class="nav">item-4</div>
+      <div class="content">content-5</div>
+    </div>
+    <div class="item">
+      <div class="nav">item-5</div>
+      <div class="content">content-6</div>
+    </div>
+    <div class="item">
+      <div class="nav">item-6</div>
+      <div class="content">content-7</div>
+    </div>
+    <div class="item">
+      <div class="nav">item-7</div>
+      <div class="content">content-8</div>
+    </div>
+    <div class="item">
+      <div class="nav">item-8</div>
+      <div class="content">content-9</div>
+    </div>
+    <div class="item">
+      <div class="nav">item-9</div>
+      <div class="content">content-10</div>
+    </div>
+  </div>
+  <!-- <script type="text/carousel-config">
+
+  </script> -->
+  <!--script>
+    var crEl = document.createElement.bind(document);
+    $('.rotate-carousel').rotateCarousel();
+    var divs = [];
+    for (var i = 0; i < 12; i++) {
+      var div = crEl('div');
+      div.style.position = 'absolute';
+      div.style.width = '20px';
+      div.style.height = '20px';
+      div.style.borderRadius = '50%';
+      div.style.border = '1px solid #00f';
+      div.style.background = '#f00';
+      div.style.textAlign = 'center';
+      div.innerHTML = i+1;
+      document.querySelector('.rotate-carousel').appendChild(div);
+      divs.push(div);
+    }
+    var oldX = 0;
+    function calcDecart(r, x) {
+      if (oldX > x)
+        y = Math.sqrt(r * r - x * x);
+      else
+        y = -Math.sqrt(r * r - x * x);
+      oldX = x;
+      return -y;
+    }
+
+    function calcRad(r, fi) {
+      var x = r * Math.cos(fi);
+      var y = r * Math.sin(fi);
+      return {
+        x: x,
+        y: y
+      };
+    }
+    var x = 0;
+    var r = 100;
+    var flag = true;
+    var fi = Math.PI * 2;
+    var step = .01;
+    var count = 12;
+    var st = fi / count;
+    var start;
+    for (var i = 0; i < count; i++) {
+      start = calcRad(r, i*st);
+      divs[i].style.top = start.y + 'px';
+      divs[i].style.left = start.x + 'px';
+    }
+    //index - куда, direcion - в какую сторону
+    var interval, cur, curIndex;
+    // function moove(direction) {
+    //   function rotate(index) {
+    //     var j = (typeof cur == 'number') ? cur : 0;
+    //     var need = calcRad(r, arr[index - 1]);
+    //     if (curIndex==index) return;
+    //     curIndex = index;
+    //     if (interval) clearInterval(interval);
+    //     interval = setInterval(function() {
+    //       var coords = calcRad(r, j);
+    //       if ((coords.y <= need.y+2 && coords.y >= need.y-2) &&
+    //       (coords.x <= need.x+2 && coords.x >= need.x-2)) {
+    //         clearInterval(interval);
+    //       }
+    //       for (var k = 0; k < arr.length; k++) {
+    //         var tempCoords = calcRad(r, j+(st*k));
+    //         divs[k].style.top = parseInt(tempCoords.y) + 'px';
+    //         divs[k].style.left = parseInt(tempCoords.x) + 'px';
+    //       }
+    //       j += step*direction;
+    //       cur = j;
+    //     }, 10);
+    //   }
+    //   return rotate;
+    // }
+    function moove(direction) {
+      function rotate(index) {
+        var j = (typeof cur == 'number') ? cur : 0;
+        if (index==0 || index == count) return;
+        var need = calcRad(r, index*st);
+        if (curIndex==index) return;
+        if ((curIndex+index)>count || (curIndex+index)<0) {
+          direction=-direction;
+        }
+        if (interval) clearInterval(interval);
+        interval = setInterval(function() {
+          var coords = calcRad(r, j);
+          if ((coords.y <= need.y+2 && coords.y >= need.y-2) &&
+          (coords.x <= need.x+2 && coords.x >= need.x-2)) {
+            clearInterval(interval);
+          }
+          for (var k = 0; k < count; k++) {
+            var tempCoords = calcRad(r, j+(st*k));
+            divs[k].style.top = parseInt(tempCoords.y) + 'px';
+            divs[k].style.left = parseInt(tempCoords.x) + 'px';
+          }
+          j += step*direction;
+          cur = j;
+        }, 10);
+      }
+      return rotate;
+    }
+    var b = moove(-1);
+    var f = moove(1);
+  </script-->
+</body>
+
+</html>
