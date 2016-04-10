@@ -6,7 +6,7 @@
 .rotate-carousel {
   position: relative;
   height: 300px;
-  /*overflow: hidden;*/
+  overflow: hidden;
 }
 .rotate-carousel-wrapper {
   position: absolute;

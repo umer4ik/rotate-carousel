@@ -110,6 +110,7 @@
 			var j = 0;
 			var k;
 			mooving = true;
+			console.log(current);
 			interval = setInterval(function () {
 				for (var i = 0; i < count; i++) {
 					var coords = calcRad(r, j+st*i);
@@ -119,7 +120,7 @@
 					})
 				};
 				j=+(j+step*direction).toFixed(10);
-				if(Math.ceil(parseInt(getComputedStyle(needCircle).top))<=-250) {
+				if(Math.ceil(parseInt(getComputedStyle(needCircle).top))<=-r) {
 					mooving = false;
 					current = getHighest().index;
 					$(carousel).trigger('afterChange', [needCircle, prevCircle, needContent, prevContent]);
@@ -163,7 +164,7 @@
 				navTo(needIndex);
 			}
 		});
-		navTo(6)
+
   }
 })(jQuery);
 $(document).ready(function() {
@@ -177,11 +178,11 @@ $(document).ready(function() {
 		$(pt).removeClass('active');
 	});
   $('.carousel').rotateCarousel({
-    width: 900,
-    height: 300,
-    radius: 250,
+    width: 1200,
+    height: 500,
+    radius: 450,
 		itemWidth: 50,
-		speed: 4,
+		speed: 3,
 		// autoplay: false
   });
 
